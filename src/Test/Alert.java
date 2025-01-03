@@ -43,6 +43,7 @@ public class Alert {
 		driver.findElement(By.id("confirmButton")).click();
 		driver.switchTo().alert().dismiss();
 		System.out.println("Alert dismissed!");
+		
 
 	}
 
