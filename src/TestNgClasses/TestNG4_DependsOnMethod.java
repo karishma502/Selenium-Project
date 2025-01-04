@@ -3,7 +3,7 @@ package TestNgClasses;
 import org.testng.Assert;
 import org.testng.annotations.*;
 /*
- * Sequencing and Prioritized
+ * Depend on Methods
  */
 public class TestNG4_DependsOnMethod {
 
