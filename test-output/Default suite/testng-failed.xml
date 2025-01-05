@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TestNgClasses.TestNG4_DependsOnMethod">
+      <class name="TestNgClasses.TestNG5_DataProvider">
         <methods>
-          <include name="a"/>
-          <include name="b"/>
+          <include name="enterData"/>
+          <include name="setEnvt"/>
         </methods>
-      </class> <!-- TestNgClasses.TestNG4_DependsOnMethod -->
+      </class> <!-- TestNgClasses.TestNG5_DataProvider -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
