@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TestNgClasses.Assertions">
+      <class name="SeleniumGridPack.SeleniumGrid">
         <methods>
-          <include name="testCase1"/>
+          <include name="openBrowser" invocation-numbers="0 1"/>
         </methods>
-      </class> <!-- TestNgClasses.Assertions -->
+      </class> <!-- SeleniumGridPack.SeleniumGrid -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
