@@ -1,7 +1,7 @@
 package TestNgClasses;
 
 import org.testng.SkipException;
-import org.testng.annotations.*;
+import org.testng.annotations.Test;
 /*
  * Skip test case.
  */

@@ -1,19 +1,13 @@
 package TestNgClasses;
 
-import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
-import java.util.logging.FileHandler;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.ITestResult;
-import org.testng.annotations.*;
-
-import com.google.common.io.Files;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
 
 public class TakeScreenshotsOnFailure2 {
 

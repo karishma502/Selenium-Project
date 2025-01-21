@@ -15,22 +15,22 @@ import org.testng.annotations.Test;
 public class SeleniumGrid {
 
 	@DataProvider(parallel = true)
-	public Object[][] sendData(){ 
-		
+	public Object[][] sendData(){
+
 		Object arr[][] =new Object[2][2];
-		
+
 		arr[0][0] ="Email_1";
 		arr[0][1]="chrome";
-		
+
 		arr[1][0] ="Email_1";
 		arr[1][1]="chrome";
-				
+
 		return arr;
 	}
-	
+
 	@Test(dataProvider = "sendData")
 	public void openBrowser(String userName,String browseName) throws MalformedURLException, URISyntaxException {
-		
+
 		ChromeOptions options= new ChromeOptions();
 
 		if(browseName.equalsIgnoreCase("chrome")) {

@@ -3,10 +3,7 @@ package Test;
 import java.time.Duration;
 import java.util.List;
 
-import javax.swing.text.Document;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -45,24 +42,24 @@ public class WebTable {
 				System.out.println(data.getText());
 			}
 		}
-		
+
 		//To print particular data only:
 		for(WebElement row: tableRows) {
 			if(row.getText().equalsIgnoreCase("HDFC Defence Fund - Direct Plan - Growth")) {
 				System.out.println(row.getText().equalsIgnoreCase("HDFC Defence Fund - Direct Plan - Growth"));
 				row.click();
 				break;
-			
+
 			}
 		}
-		
+
 		//using normal for loop
-		
-		for(int i=0;i<tableRows.size();i++) {
-			if(tableRows.get(i).getText().equalsIgnoreCase("HDFC Defence Fund - Direct Plan - Growth")) {
-				String value= tableRows.get(i).getText();
+
+		for (WebElement tableRow : tableRows) {
+			if(tableRow.getText().equalsIgnoreCase("HDFC Defence Fund - Direct Plan - Growth")) {
+				String value= tableRow.getText();
 				System.out.println("Value is" + value);
-				tableRows.get(i).click();
+				tableRow.click();
 				break;
 			}
 		}

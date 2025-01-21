@@ -14,23 +14,23 @@ public class ImplicitWait {
 		// TODO Auto-generated method stub
 
 		System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
-		
+
 		WebDriver driver= new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("https://www.google.com/");
-		
+
 		//implicit wait
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3000000));
-		
+
 		// handle auto search auto suggestion
-		
+
 		driver.findElement(By.xpath("//textarea[@name='q']")).sendKeys("How stuff works");
 		List<WebElement> AllSuggestions= driver.findElements(By.xpath("//ul[@role='listbox']//li"));
-		
-		for(int i=0;i<AllSuggestions.size();i++) {
+
+		for (WebElement suggestion : AllSuggestions) {
 			String expResult ="How stuff works quiz";
-			if(AllSuggestions.get(i).getText().equalsIgnoreCase(expResult)) {
-				AllSuggestions.get(i).click();
+			if(suggestion.getText().equalsIgnoreCase(expResult)) {
+				suggestion.click();
 				break;
 			}
 		}

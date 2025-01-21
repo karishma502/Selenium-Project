@@ -4,16 +4,19 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.time.Duration;
 import java.util.Properties;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.*;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
 /*
  * Prioritization using Dataprovider
  */
 public class TestNG5_DataProvider {
 
-	WebDriver driver;	
+	WebDriver driver;
 	@BeforeClass
 	public void setEnvt() {
 

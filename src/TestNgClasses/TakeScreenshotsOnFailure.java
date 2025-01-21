@@ -2,6 +2,7 @@ package TestNgClasses;
 
 import java.io.File;
 import java.io.IOException;
+
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -26,7 +27,7 @@ public class TakeScreenshotsOnFailure {
 
 			File src = tc.getScreenshotAs(OutputType.FILE);
 
-			//copy the file to specific location 
+			//copy the file to specific location
 
 			File destination = new File("./screenshots/" + result.getName()+ ".png");
 

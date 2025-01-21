@@ -34,7 +34,7 @@ public class Assertions {
 
 		String actual1 = "ab";
 		String expt ="abc";
-		
+
 		try {
 			Assert.assertEquals(actual1, expt);
 		} catch (Error e) {

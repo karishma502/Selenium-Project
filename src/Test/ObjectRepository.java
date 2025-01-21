@@ -14,11 +14,11 @@ public class ObjectRepository {
 	static File src1;
 	static File src2;
 	static File src3;
-	
+
 	static FileInputStream fis1 ;
 	static FileInputStream fis2 ;
 	static FileInputStream fis3 ;
-	
+
 	static Properties pro1;
 	static Properties pro2 ;
 	static Properties pro3 ;
@@ -53,17 +53,17 @@ public class ObjectRepository {
 
 		pro3 = new Properties();
 		pro3.load(fis3);
-		
+
 		// setting proprty of chrome browser and passing ChromeDriver path
-		
+
 		System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		driver.get(pro1.getProperty("URL"));
-		
+
 		//getProperty  method will accpet key and return value of that key
-		
+
 		driver.findElement(By.xpath(pro2.getProperty("EMAIL"))).sendKeys(pro3.getProperty("TestData1"));
 		driver.findElement(By.xpath(pro2.getProperty("Password"))).sendKeys(pro3.getProperty("TestData2"));
 		Thread.sleep(2000);

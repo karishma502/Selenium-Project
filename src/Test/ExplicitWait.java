@@ -1,11 +1,9 @@
 package Test;
 
 import java.time.Duration;
-import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -36,13 +34,13 @@ public class ExplicitWait {
 		System.out.println(driver.findElement(By.xpath("//input[@id='email']")).getSize().getWidth());
 
 		//Use explicit wait to check pass field is visible
-		
+
 		WebDriverWait wt = new WebDriverWait(driver,Duration.ofSeconds(30));
 		wt.until(ExpectedConditions.visibilityOfElementLocated(By.id("passs"))).sendKeys("Password");
-		
+
 		driver.findElement(By.xpath("//button[@name='login']")).click();
-		
-		
+
+
 	}
 
 }
