@@ -2,6 +2,7 @@ package Test;
 
 
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 public class OpenAppilcation {
@@ -10,8 +11,12 @@ public class OpenAppilcation {
 		// TODO Auto-generated method stub
 
 		//Setting property of chromebrowser and passing chromedriver path
-		System.setProperty("webdriver.chrome.driver","/usr/local/bin/chromedriver");
+		//System.setProperty("webdriver.chrome.driver","/usr/local/bin/chromedriver");
 
+		//if we use WebDriverManager(alternative option for system.setProperty()
+		//and also we dont need to add exe file into the project ,just add dependency
+		//and use below syntax
+		WebDriverManager.chromedriver().setup();
 		//Launching chrome
 		WebDriver driver = new ChromeDriver();
 
