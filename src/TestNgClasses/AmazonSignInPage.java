@@ -1,18 +1,44 @@
 package TestNgClasses;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+import io.github.bonigarcia.wdm.managers.ChromeDriverManager;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.safari.SafariDriver;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-public class AmazonSignInPage {
+import java.time.Duration;
 
-    @Test(priority = 1,
-    groups = "Sanity")
-    void test_Login(){
+public class AmazonSignInPage {
+    WebDriver driver;
+
+    @Parameters({"browser","url"})
+    @Test
+    void test_Login(String br,String url) throws InterruptedException {
+        switch (br.toLowerCase()){
+            case "chrome":  driver = new ChromeDriver();
+            break;
+            case "firefox":  driver = new FirefoxDriver();
+            break;
+            case "edge": driver=new EdgeDriver();
+            break;
+            default:System.out.println("Invalid browser"); return;
+        }
+        
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+        driver.get(url);
+        Thread.sleep(2000);
         System.out.println("Login to Amazon...");
     }
 
-    @Test(priority = 2,dependsOnMethods = "test_Login",groups = "Sanity")
-    void test_Search(){
+   @Test(priority = 1,dependsOnMethods = "test_Login",groups = "Sanity")
+   public void test_Search(){
         System.out.println("Search in Amazon...");
     }
 

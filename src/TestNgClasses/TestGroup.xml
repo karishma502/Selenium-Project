@@ -1,18 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="TestGroups">
-<test name="TestGrops">
-  <groups>
-    <run>
-     <!-- <include name="Sanity"/>-->
+<suite name="TestGroups" parallel="tests" thread-count="2">
+<test name="TestGrops1">
+    <!--  <groups>
+     <run>
+      <include name="Sanity"/>
       <include name="Functional"/>
 
     </run>
-  </groups>
-  <classes>
-    <class name="TestNgClasses.AmazonSignInPage"></class>
-    <class name="TestNgClasses.FaceBookSignInpage"></class>
-    <class name="TestNgClasses.MyntraSignInpage"></class>
+  </groups>-->
+  <parameter name="browser" value="CHROME"/>
+    <parameter name="url" value="https://demoqa.com/alerts"/>
+
+    <classes>
+      <class name="TestNgClasses.AmazonSignInPage"/>
+    <!--  <class name="TestNgClasses.FaceBookSignInpage"></class>
+    <class name="TestNgClasses.MyntraSignInpage"></class>-->
   </classes>
 </test>
+    <test name="TestGrops2">
+        <parameter name="browser" value="FIREFOX"/>
+        <parameter name="url" value="https://demoqa.com/alerts"/>
+
+        <classes>
+            <class name="TestNgClasses.AmazonSignInPage"/>
+        </classes>
+    </test>
+    <test name="TestGrops3">
+        <parameter name="browser" value="edge"/>
+        <parameter name="url" value="https://demoqa.com/alerts"/>
+
+        <classes>
+            <class name="TestNgClasses.AmazonSignInPage"/>
+        </classes>
+    </test>
 </suite>
