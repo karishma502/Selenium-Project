@@ -7,10 +7,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 public class Assertions {
 	WebDriver driver;
-	@Test
+	//Hard assertion
+	@Test(enabled = true)
 	public void testCase1() {
 		System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
 		driver= new ChromeDriver();
@@ -33,13 +35,31 @@ public class Assertions {
 		System.out.println("True assertion varified");
 
 		String actual1 = "ab";
-		String expt ="abc";
+		String expected1 ="abc";
 
 		try {
-			Assert.assertEquals(actual1, expt);
+			Assert.assertEquals(actual1, expected1);
 		} catch (Error e) {
+			System.out.println("assertion failed!!!");
 		}
-		System.out.println("equal assert pass");
+
+
+	}
+
+// Even if assertion fail  next step will execute if use soft assertion
+@Test
+	void test_softAssert(){
+		System.out.println("testing");
+		System.out.println("testing");
+
+      	SoftAssert  as = new SoftAssert(); //soft assertion
+
+		  as.assertEquals(1,2);
+
+		System.out.println("testing");
+		System.out.println("testing");
+
+		as.assertAll(); //mandatory
 
 
 	}

@@ -7,16 +7,20 @@ import org.testng.annotations.Test;
  */
 public class TestNG4_DependsOnMethod {
 
-	@Test()
+	@Test(dependsOnMethods = "c")
 	public void a() {
-		Assert.assertTrue(3>12);
-		System.out.println("Hey,a Test method...");
+		System.out.println("Search");
 	}
 
-	@Test(dependsOnMethods = "a")
+	@Test(dependsOnMethods = "c")
 	public void b() {
-		Assert.assertTrue(3>12);
-		System.out.println("Hey,b Test method...");
+		System.out.println("Logout");
+	}
+
+	@Test
+	public void c() {
+		Assert.fail();
+		System.out.println("Login");
 	}
 
 }

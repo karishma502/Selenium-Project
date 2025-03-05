@@ -33,8 +33,8 @@ public class MouseSimutions3 {
 		Actions ac = new Actions(driver);
 
 		// change the position
-		ac.dragAndDropBy(drag, 100, 60).build().perform();
-		ac.clickAndHold(drag).dragAndDropBy(drag, 100, 60).build().perform();
+		ac.dragAndDropBy(drag, 60, 100).build().perform();
+		ac.clickAndHold(drag).dragAndDropBy(drag, 60, 100).build().perform();
 
 
 

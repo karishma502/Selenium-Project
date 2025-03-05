@@ -48,11 +48,6 @@ public class MouseSimutions {
 		driver.findElement(By.xpath("//span[@role='button']")).click();
 		System.out.println("click opetation performed");
 
-
-
-
-
-
 		// right click on web page
 
 		Thread.sleep(2000);
