@@ -9,6 +9,7 @@
 
     </run>
   </groups>
+  <parameter name="browser" value="chrome"/>
   <classes>
     <class name="TestNgClasses.AmazonSignInPage"></class>
     <class name="TestNgClasses.FaceBookSignInpage"></class>
