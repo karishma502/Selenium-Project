@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="TestGroups" thread-count="5" parallel="tests">
+
+<listeners>
+  <listener class-name ="TestNgClasses.MyListener"/>
+</listeners>
+
+<test name="TestGroups">
+  <classes>
+    <class name="TestNgClasses.MyntraTestPage"/>
+    <class name="TestNgClasses.FaceBookSignInpage"/>
+</classes>
+</test>
+</suite>

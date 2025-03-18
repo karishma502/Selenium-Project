@@ -1,14 +1,9 @@
 package TestNgClasses;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-import io.github.bonigarcia.wdm.managers.ChromeDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.safari.SafariDriver;
-import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -16,10 +11,10 @@ import java.time.Duration;
 
 public class AmazonSignInPage {
     WebDriver driver;
-
-    @Parameters({"browser","url"})
     @Test
-    void test_Login(String br,String url) throws InterruptedException {
+    @Parameters({"browser","url"})
+    public void test_Login(String br,String url) throws InterruptedException {
+
         switch (br.toLowerCase()){
             case "chrome":  driver = new ChromeDriver();
             break;
