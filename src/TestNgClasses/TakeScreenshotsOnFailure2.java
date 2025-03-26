@@ -7,8 +7,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-
+@Listeners(TestNgClasses.MyListener.class)
 public class TakeScreenshotsOnFailure2 {
 
 	TakeScreenshotsOnFailure t1 = new TakeScreenshotsOnFailure();

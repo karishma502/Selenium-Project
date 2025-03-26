@@ -8,8 +8,9 @@
 
 <test name="TestGroups">
   <classes>
-    <class name="TestNgClasses.MyntraTestPage"/>
-    <class name="TestNgClasses.FaceBookSignInpage"/>
+   <!-- <class name="TestNgClasses.MyntraTestPage"/>
+    <class name="TestNgClasses.FaceBookSignInpage"/>-->
+    <class name="TestNgClasses.TakeScreenshotsOnFailure2"/>
 </classes>
 </test>
 </suite>
